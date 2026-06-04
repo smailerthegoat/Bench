@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bench — Interaction Lab</title>
+<meta name="description" content="Eleven interaction patterns, hand-written in vanilla JS, each one linked to a site that ships it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/mast.css">
+<link rel="stylesheet" href="css/spec.css">
+<link rel="stylesheet" href="css/demos.css">
+<link rel="stylesheet" href="css/kit.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <filter id="gooey">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="11" result="b"/>
+    <feColorMatrix in="b" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -9"/>
+  </filter>
+</defs></svg>
+
+<div class="wrap">
+
+<header class="mast">
+  <p class="eyebrow">Bench · 11 patterns · no dependencies</p>
+  <h1>Steal the <em>mechanics</em>,<br>not the layout.</h1>
+  <p class="lede">Every "award-site" template is four or five of these patterns stacked on an ordinary page. Each panel below is <b>live and hand-written in vanilla JS</b> — hover it, drag it, scroll inside it. The rail on the left says what the pattern costs, and <b>which of the four sibling sites actually ships it</b>, with source.</p>
+  <div class="legend"><span>hover →</span><span>drag ✋</span><span>scroll inside the framed panels</span></div>
+</header>
+
+<!-- 01 -->
+<section class="spec">
+  <div class="rail">
+    <span class="tag">Cursor</span>
+    <h2>Magnetic field</h2>
+    <p>A blend-mode cursor that inverts whatever sits under it, plus buttons that <b>lean toward the pointer</b> and spring back. The cheapest way to make a page feel expensive.</p>
+    <p class="meta">pointermove + lerp<br>mix-blend-mode: difference<br>~45 lines</p>
+    <div class="used">
+      <span class="lbl">Shipped in</span>
+      <a class="site" href="https://smailerthegoat.github.io/website2/">Sideways</a>
+      <span class="what">Drives the contact card and every nav target on the CV.</span>
+      <a class="repo" href="https://github.com/smailerthegoat/website2">github.com/smailerthegoat/website2</a>
+    </div>
+  </div>
+  <div class="stage" id="magnet">
+    <div id="dot"></div>
+    <div class="lockup">Pull toward the pointer</div>
+    <div class="row">
+      <button class="mag"><span>Start a project</span></button>
+      <button class="mag"><span>Showreel</span></button>
+      <button class="mag"><span>Index</span></button>
+    </div>
+    <div class="hint">move your cursor</div>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="spec">
+  <div class="rail">
+    <span class="tag">Type</span>
+    <h2>Decode on hover</h2>
+    <p>Characters cycle through junk glyphs and resolve left to right. Works on any list — <b>project indexes, nav items, price tables</b> — and costs one interval per hover.</p>
+    <p class="meta">setInterval + charAt swap<br>~35 lines</p>
+    <div class="used">
+      <span class="lbl">Shipped in</span>
+      <a class="site" href="https://smailerthegoat.github.io/website5/">Index</a>
+      <span class="what">Every tile label decodes as it enters the viewport ring.</span>
+      <a class="repo" href="https://github.com/smailerthegoat/website5">github.com/smailerthegoat/website5</a>
+    </div>
+  </div>
+  <div class="stage" id="scramble">
+    <div class="sl"><span class="t" data-text="Nocturne Atlas">Nocturne Atlas</span><span class="y">2026 — WebGL</span></div>
+    <div class="sl"><span class="t" data-text="Halcyon Press">Halcyon Press</span><span class="y">2025 — Editorial</span></div>
+    <div class="sl"><span class="t" data-text="Drift Studio">Drift Studio</span><span class="y">2025 — Identity</span></div>
+    <div class="sl"><span class="t" data-text="Kestrel Audio">Kestrel Audio</span><span class="y">2024 — Product</span></div>
+    <div class="sl"><span class="t" data-text="Vantablack Co">Vantablack Co</span><span class="y">2024 — Commerce</span></div>
+    <div class="hint">hover a row</div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="spec">
+  <div class="rail">
+    <span class="tag">Canvas</span>
+    <h2>Sampled particles</h2>
+    <p>Text is drawn to an offscreen canvas, its pixels are read once, and each opaque pixel becomes a particle that <b>flees the cursor and springs home</b>. Swap the text for a logo or photo and nothing else changes.</p>
+    <p class="meta">getImageData sampling<br>spring: k .055 / damp .86<br>~70 lines</p>
+    <div class="used">
+      <span class="lbl">Shipped in</span>
+      <a class="site" href="https://smailerthegoat.github.io/website3/">Teardown</a>
+      <span class="what">The sticky figure that re-forms at each step of the article.</span>
+      <a class="repo" href="https://github.com/smailerthegoat/website3">github.com/smailerthegoat/website3</a>
+    </div>
+  </div>
+  <div class="stage"><canvas id="particles"></canvas><div class="hint">push through the letters</div></div>
+</section>
+
+<!-- 04 -->
+<section class="spec">
+  <div class="rail">
+    <span class="tag">Image</span>
+    <h2>Sliced &amp; shifted</h2>
+    <p>One image split into horizontal strips that offset in alternating directions on a staggered delay, with an RGB ghost underneath. <b>Pure CSS transitions</b> — the displacement look without a shader.</p>
+    <p class="meta">10 strips · staggered delay<br>mix-blend-mode: screen<br>~30 lines</p>
+    <div class="used">
+      <span class="lbl">Shipped in</span>
+      <a class="site" href="https://smailerthegoat.github.io/website5/">Index</a>
+      <span class="what">Tile hover state across the whole draggable grid.</span>
+      <a class="repo" href="https://github.com/smailerthegoat/website5">github.com/smailerthegoat/website5</a>
+    </div>
+  </div>
+  <div class="stage" id="slices">
+    <div class="slicebox" id="slicebox">
+      <div class="ghost g1"></div><div class="ghost g2"></div>
+      <div class="slicecap">Nocturne Atlas — 01 / 06</div>
+    </div>
+    <div class="hint">hover the frame</div>
+  </div>
+</section>
+
+<!-- 05 -->
+<section class="spec">
+  <div class="rail">
+    <span class="tag">Scroll</span>
+    <h2>Velocity marquee</h2>
+    <p>The ticker drifts on its own, then <b>accelerates and skews with your scroll speed</b> and settles back. Two rows travelling opposite ways sell the depth.</p>
+    <p class="meta">scroll delta → skewX<br>modulo wrap, rAF<br>~40 lines</p>
+    <div class="used">
+      <span class="lbl">Shipped in</span>
+      <a class="site" href="https://smailerthegoat.github.io/website2/">Sideways</a>
+      <span class="what">The skills band between the timeline and the contact card.</span>
+      <a class="repo" href="https://github.com/smailerthegoat/website2">github.com/smailerthegoat/website2</a>
+    </div>
+  </div>
+  <div class="stage" id="marquee">
+    <div class="mrow"><div class="inner"><b>DIRECTION</b><b>·</b><b>MOTION</b><b>·</b><b>CRAFT</b><b>·</b><b>DIRECTION</b><b>·</b><b>MOTION</b><b>·</b><b>CRAFT</b><b>·</b></div></div>
+    <div class="mrow alt"><div class="inner"><b>SCROLL FASTER</b><b>·</b><b>SCROLL FASTER</b><b>·</b><b>SCROLL FASTER</b><b>·</b><b>SCROLL FASTER</b><b>·</b></div></div>
+    <div class="hint">scroll the page, watch the skew</div>
+  </div>
+</section>
+
+<!-- 06 -->
+<section class="spec">
+  <div class="rail">
+    <span class="tag">Scroll</span>
+    <h2>Pinned horizontal</h2>
+    <p>Vertical scroll drives horizontal travel while the section stays pinned. Demoed here inside its own scroll box so it can't hijack the page — <b>on a real site this is one ScrollTrigger pin</b>.</p>
+    <p class="meta">position: sticky + progress<br>translateX(-p × overflow)<br>~35 lines</p>
+    <div class="used">
+      <span class="lbl">Shipped in</span>
+      <a class="site" href="https://smailerthegoat.github.io/website2/">Sideways</a>
+      <span class="what">The whole CV is one pinned track — this is its spine.</span>
+      <a class="repo" href="https://github.com/smailerthegoat/website2">github.com/smailerthegoat/website2</a>
+    </div>
+  </div>
+  <div class="stage">
+    <div class="scroller" id="hscroll">
+      <div class="tall">
+        <div class="stick">
+          <div class="track" id="htrack">
+            <div class="card"><span class="n">01</span><div><h3>Brief</h3><p>Pin the section, map progress 0→1.</p></div></div>
+            <div class="card"><span class="n">02</span><div><h3>Map</h3><p>Translate the track by progress × overflow.</p></div></div>
+            <div class="card"><span class="n">03</span><div><h3>Ease</h3><p>Lerp the value so it never snaps.</p></div></div>
+            <div class="card"><span class="n">04</span><div><h3>Scale</h3><p>Fade or scale items by distance to centre.</p></div></div>
+            <div class="card"><span class="n">05</span><div><h3>Exit</h3><p>Release the pin, hand scroll back.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="prog" id="hprog"></div>
+    <div class="hint">scroll inside this panel</div>
+  </div>
+</section>
+
+<!-- 07 -->
+<section class="spec">
+  <div class="rail">
+    <span class="tag">Scroll</span>
+    <h2>Stacking deck</h2>
+    <p>Sticky cards that pile up, each one <b>scaling down and dimming as the next covers it</b>. The workhorse pattern for services, pricing and process sections.</p>
+    <p class="meta">sticky top offsets + scale<br>~30 lines</p>
+    <div class="used">
+      <span class="lbl">Shipped in</span>
+      <a class="site" href="https://smailerthegoat.github.io/website3/">Teardown</a>
+      <span class="what">The five-step summary that closes the article.</span>
+      <a class="repo" href="https://github.com/smailerthegoat/website3">github.com/smailerthegoat/website3</a>
+    </div>
+  </div>
+  <div class="stage">
+    <div class="scroller" id="sscroll">
+      <div class="tall" style="height:1200px;padding-block:24px;display:flex;flex-direction:column;gap:40px">
+        <div class="sticky-card" style="top:24px;background:#1B2030"><h3>Discovery</h3><p>Every card sticks at a slightly lower offset than the last.</p></div>
+        <div class="sticky-card" style="top:40px;background:#212739"><h3>Direction</h3><p>Scale falls as the next card approaches — that's the depth cue.</p></div>
+        <div class="sticky-card" style="top:56px;background:#2A3042"><h3>Build</h3><p>The final card releases and the page carries on.</p></div>
+        <div class="sticky-card" style="top:72px;background:#343B4F"><h3>Ship</h3><p>Four is the limit before it reads as a gimmick.</p></div>
+      </div>
+    </div>
+    <div class="hint">scroll inside this panel</div>
+  </div>
+</section>
+
+<!-- 08 -->
+<section class="spec">
+  <div class="rail">
+    <span class="tag">Pointer</span>
+    <h2>Throw &amp; settle</h2>
+    <p>Drag, release, and the chip <b>keeps its velocity, rotates into the throw and bounces off the walls</b> with friction. Physics you can write in a dozen lines, no engine.</p>
+    <p class="meta">pointer capture + velocity<br>friction .94 · restitution .6<br>~60 lines</p>
+    <div class="used">
+      <span class="lbl">Shipped in</span>
+      <a class="site" href="https://smailerthegoat.github.io/website4/">Coverlab</a>
+      <span class="what">Title and mark blocks are thrown around the artboard.</span>
+      <a class="repo" href="https://github.com/smailerthegoat/website4">github.com/smailerthegoat/website4</a>
+    </div>
+  </div>
+  <div class="stage" id="drag">
+    <div class="chip" data-x="40" data-y="40"><span class="k">weight</span><div class="v">Inertia</div></div>
+    <div class="chip" data-x="220" data-y="120"><span class="k">damping</span><div class="v">0.94</div></div>
+    <div class="chip" data-x="410" data-y="60"><span class="k">bounce</span><div class="v">Walls</div></div>
+    <div class="hint">throw them</div>
+  </div>
+</section>
+
+<!-- 09 -->
+<section class="spec">
+  <div class="rail">
+    <span class="tag">3D</span>
+    <h2>Tilt &amp; glare</h2>
+    <p>Pointer position maps to rotateX/rotateY, children sit on <b>different translateZ planes</b> so they part as it turns, and a radial highlight tracks the cursor like foil.</p>
+    <p class="meta">perspective + preserve-3d<br>radial-gradient glare<br>~35 lines</p>
+    <div class="used">
+      <span class="lbl">Shipped in</span>
+      <a class="site" href="https://smailerthegoat.github.io/website4/">Coverlab</a>
+      <span class="what">The export preview — your cover as a physical object.</span>
+      <a class="repo" href="https://github.com/smailerthegoat/website4">github.com/smailerthegoat/website4</a>
+    </div>
+  </div>
+  <div class="stage" id="tilt">
+    <div class="tcard" id="tcard">
+      <div class="glare" id="glare"></div>
+      <span class="rune">№ 009</span>
+      <div class="ttl">Foil<br>Edition</div>
+      <div class="sub">Tilt me — the layers separate</div>
+    </div>
+    <div class="hint">hover the card</div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="spec">
+  <div class="rail">
+    <span class="tag">SVG</span>
+    <h2>Gooey merge</h2>
+    <p>A blur plus a high-contrast alpha matrix makes separate circles <b>fuse like mercury</b> when they get close. One filter, applied to a whole layer.</p>
+    <p class="meta">feGaussianBlur + feColorMatrix<br>trailing lerp chain<br>~45 lines</p>
+    <div class="used">
+      <span class="lbl">Shipped in</span>
+      <a class="site" href="https://smailerthegoat.github.io/website5/">Index</a>
+      <span class="what">The cursor trail that swallows the filter dots.</span>
+      <a class="repo" href="https://github.com/smailerthegoat/website5">github.com/smailerthegoat/website5</a>
+    </div>
+  </div>
+  <div class="stage" id="goo">
+    <div class="gooLayer" id="gooLayer"></div>
+    <div class="gooLabel"><i>work</i><i>studio</i><i>contact</i></div>
+    <div class="hint">sweep across the dots</div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section class="spec">
+  <div class="rail">
+    <span class="tag">Entrance</span>
+    <h2>Column wipe</h2>
+    <p>A counter runs 0→100 while columns wipe upward on a stagger. The thing that <b>buys you two seconds of loading</b> and sets the tone before any content lands.</p>
+    <p class="meta">staggered scaleY + rAF counter<br>~45 lines</p>
+    <div class="used">
+      <span class="lbl">Shipped in</span>
+      <a class="site" href="https://smailerthegoat.github.io/website3/">Teardown</a>
+      <span class="what">Opens the article while the canvas figure builds behind it.</span>
+      <a class="repo" href="https://github.com/smailerthegoat/website3">github.com/smailerthegoat/website3</a>
+    </div>
+  </div>
+  <div class="stage" id="loader">
+    <div class="reveal-title">The site behind the curtain</div>
+    <div class="cols" id="cols"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="count" id="count">100</div>
+    <button class="replay" id="replay">Replay</button>
+  </div>
+</section>
+
+<section class="kit">
+  <h2>The four sites these patterns came out of</h2>
+  <p class="sub">Effects are not a project. Each of these picks three or four patterns from the bench and throws the rest away — which is the whole argument for building them separately instead of one page that does everything.</p>
+
+  <div class="builds">
+    <div class="build">
+      <span class="idx">website2</span>
+      <h3>Sideways</h3>
+      <p>A résumé that scrolls horizontally: each role a panel on a pinned track, a progress hairline at the top, a magnetic contact card at the end.</p>
+      <p class="uses">magnetic · velocity marquee · pinned horizontal</p>
+      <p class="links"><a href="https://smailerthegoat.github.io/website2/">live ↗</a><a href="https://github.com/smailerthegoat/website2">source</a></p>
+    </div>
+    <div class="build">
+      <span class="idx">website3</span>
+      <h3>Teardown</h3>
+      <p>Scrollytelling: how a scroll position becomes a frame on screen. Prose on the left, a sticky canvas on the right that rebuilds itself at every step.</p>
+      <p class="uses">sampled particles · stacking deck · column wipe</p>
+      <p class="links"><a href="https://smailerthegoat.github.io/website3/">live ↗</a><a href="https://github.com/smailerthegoat/website3">source</a></p>
+    </div>
+    <div class="build">
+      <span class="idx">website4</span>
+      <h3>Coverlab</h3>
+      <p>A generative cover maker. Seed, palette and mode drive a canvas composition; you throw the type blocks where you want them and export a PNG.</p>
+      <p class="uses">throw &amp; settle · tilt &amp; glare</p>
+      <p class="links"><a href="https://smailerthegoat.github.io/website4/">live ↗</a><a href="https://github.com/smailerthegoat/website4">source</a></p>
+    </div>
+    <div class="build">
+      <span class="idx">website5</span>
+      <h3>Index</h3>
+      <p>An infinite draggable grid of work. Throw it in any direction, tiles scale by distance from centre, labels decode as they arrive.</p>
+      <p class="uses">decode on hover · sliced &amp; shifted · gooey merge</p>
+      <p class="links"><a href="https://smailerthegoat.github.io/website5/">live ↗</a><a href="https://github.com/smailerthegoat/website5">source</a></p>
+    </div>
+  </div>
+
+  <div class="stackrow">
+    <div>
+      <h4>When to reach for a library</h4>
+      <ul>
+        <li><b>GSAP + ScrollTrigger</b> — real pinning, scrub, snap. The moment pattern 06 goes on a live page.</li>
+        <li><b>Lenis</b> — smoothed scroll. Half of what makes those sites feel different is just this.</li>
+        <li><b>Motion</b> — layout and presence animation once you're in React.</li>
+        <li><b>R3F + drei</b> — only once 2D canvas genuinely runs out.</li>
+      </ul>
+    </div>
+    <div>
+      <h4>What keeps it fast</h4>
+      <ul>
+        <li>Animate <b>transform and opacity only</b>. Everything else repaints.</li>
+        <li>One rAF loop per effect, and <b>IntersectionObserver</b> to pause it offscreen — see <code>js/util.js</code>.</li>
+        <li>Lerp toward targets (<b>v += (t − v) × 0.1</b>) instead of CSS transitions on pointermove.</li>
+        <li>Honour <b>prefers-reduced-motion</b>, and make sure the page reads with JS off.</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Where the taste comes from</h4>
+      <ul>
+        <li>Pick <b>one</b> signature moment. Keep everything around it still.</li>
+        <li>Type does more than motion: one characterful display face, set tight.</li>
+        <li>Fast in (200–350ms), slow out. Never linear.</li>
+        <li>If an effect doesn't make the content clearer or the brand louder, cut it.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="foot">
+    <span>Bench — built by hand, no dependencies.</span>
+    <a href="https://github.com/smailerthegoat/website1">github.com/smailerthegoat/website1</a>
+  </p>
+</section>
+
+</div>
+
+<script src="js/util.js"></script>
+<script src="js/artwork.js"></script>
+<script src="js/magnetic.js"></script>
+<script src="js/scramble.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/slices.js"></script>
+<script src="js/marquee.js"></script>
+<script src="js/hscroll.js"></script>
+<script src="js/stack.js"></script>
+<script src="js/drag.js"></script>
+<script src="js/tilt.js"></script>
+<script src="js/goo.js"></script>
+<script src="js/loader.js"></script>
+</body>
+</html>
