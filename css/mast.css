@@ -1,0 +1,18 @@
+.mast{padding-block:64px 44px;border-bottom:var(--rule)}
+.eyebrow{
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--dim);margin:0 0 20px;
+}
+h1{
+  font-family:var(--display);font-weight:800;
+  font-size:clamp(40px,8.5vw,86px);line-height:.94;letter-spacing:-.035em;
+  margin:0;text-wrap:balance;
+}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{max-width:56ch;color:var(--fg-dim);font-size:17px;margin:24px 0 0}
+.lede b{color:var(--fg);font-weight:500}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.legend span{
+  font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--dim);
+  border:var(--rule);border-radius:999px;padding:5px 11px;
+}
