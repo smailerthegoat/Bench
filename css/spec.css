@@ -1,0 +1,54 @@
+/* The two-column specimen row: meta rail + live stage. */
+.spec{
+  display:grid;grid-template-columns:240px minmax(0,1fr);gap:32px;
+  padding-block:44px;border-bottom:var(--rule);align-items:start;
+}
+.rail h2{
+  font-family:var(--display);font-weight:700;font-size:23px;
+  letter-spacing:-.02em;margin:6px 0 8px;line-height:1.15;
+}
+.tag{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);
+}
+.rail p{color:var(--dim);font-size:13.5px;line-height:1.55;margin:0 0 14px}
+.rail p b{color:var(--fg-dim);font-weight:500}
+.meta{
+  font-family:var(--mono);font-size:11px;color:var(--faint);
+  line-height:1.9;border-top:1px dashed var(--line);padding-top:10px;
+}
+
+/* "Used in" — the cross-reference to a sibling site that ships this pattern. */
+.used{border-top:1px dashed var(--line);margin-top:14px;padding-top:12px}
+.used .lbl{
+  display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--faint);margin-bottom:7px;
+}
+.used .site{
+  font-family:var(--display);font-weight:700;font-size:15px;
+  letter-spacing:-.01em;color:var(--fg);text-decoration:none;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.used .site:hover{color:var(--accent)}
+.used .site::after{content:"↗";font-family:var(--mono);font-size:12px;opacity:.6}
+.used .what{display:block;font-size:12.5px;color:var(--dim);margin:3px 0 8px}
+.used .repo{
+  font-family:var(--mono);font-size:11px;color:var(--faint);
+  text-decoration:none;border-bottom:1px solid var(--line);
+}
+.used .repo:hover{color:var(--accent);border-color:var(--accent)}
+
+.stage{
+  position:relative;background:var(--panel);border:var(--rule);
+  border-radius:4px;min-height:300px;overflow:hidden;
+}
+.hint{
+  position:absolute;left:12px;bottom:10px;z-index:6;pointer-events:none;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--faint);
+}
+
+@media (max-width:760px){
+  .spec{grid-template-columns:1fr;gap:18px;padding-block:34px}
+  .meta{display:none}
+}
