@@ -1,0 +1,40 @@
+/* Closing section: the four sibling builds + working notes. */
+.kit{padding-block:56px 0}
+.kit h2{
+  font-family:var(--display);font-weight:800;font-size:clamp(26px,4.4vw,38px);
+  letter-spacing:-.03em;margin:0 0 8px;
+}
+.kit .sub{color:var(--dim);margin:0 0 32px;max-width:62ch}
+
+.builds{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:1px;background:var(--line);border:var(--rule);
+}
+.build{background:var(--ink);padding:22px;display:flex;flex-direction:column;gap:10px}
+.build .idx{font-family:var(--mono);font-size:11px;color:var(--accent)}
+.build h3{font-family:var(--display);font-size:18px;font-weight:700;margin:0;letter-spacing:-.015em}
+.build p{margin:0;font-size:13.5px;color:var(--fg-dim)}
+.build .uses{font-family:var(--mono);font-size:11px;color:var(--faint);margin-top:auto}
+.build .links{display:flex;gap:14px;font-family:var(--mono);font-size:11px}
+.build .links a{text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px}
+.build .links a:hover{color:var(--accent);border-color:var(--accent)}
+
+.stackrow{
+  margin-top:36px;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;
+}
+.stackrow h4{
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 10px;
+}
+.stackrow ul{margin:0;padding-left:18px;font-size:13.5px;color:var(--fg-dim)}
+.stackrow li{margin-bottom:5px}
+.stackrow b{color:var(--fg);font-weight:500}
+
+.foot{
+  margin-top:56px;padding-top:20px;border-top:var(--rule);
+  font-family:var(--mono);font-size:11px;color:var(--faint);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--accent)}
