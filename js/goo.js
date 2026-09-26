@@ -1,4 +1,4 @@
-/* 10 — gooey merge. A heavy blur followed by a high-contrast alpha ramp:
+/* 10 : gooey merge. A heavy blur followed by a high-contrast alpha ramp:
    anything that overlaps after blurring resolves as one shape. The filter is
    in the markup; this file only moves circles. */
 (function(){
@@ -40,7 +40,7 @@
   L.loop(stage, function(){
     var tx = m.x, ty = m.y;
     blobs.forEach(function(b, i){
-      /* each blob chases the one in front, a little slower — that lag is the goo */
+      /* each blob chases the one in front, a little slower, that lag is the goo */
       b.x = L.lerp(b.x, tx, 0.22 - i * 0.04);
       b.y = L.lerp(b.y, ty, 0.22 - i * 0.04);
       b.el.style.transform = "translate3d(" + (b.x - b.s / 2) + "px," + (b.y - b.s / 2) + "px,0)";

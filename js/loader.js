@@ -1,4 +1,4 @@
-/* 11 — column wipe. A counter runs while columns hold, then they lift on a
+/* 11 : column wipe. A counter runs while columns hold, then they lift on a
    stagger. Replayable here; on a real site it runs once and removes itself. */
 (function(){
   "use strict";

@@ -1,4 +1,4 @@
-/* 03 — image-sampled particles.
+/* 03 : image-sampled particles.
    Draw once to an offscreen canvas, read the alpha channel, and every opaque
    pixel becomes a particle that flees the cursor and springs back home.
    Swap fillText for drawImage and the same code runs on a photo. */
@@ -29,7 +29,7 @@
     o.fillText("IDEAS", W / 2, H / 2);
 
     var data = o.getImageData(0, 0, W, H).data;
-    var gap = W < 520 ? 5 : 4;      /* sampling step — the only perf dial */
+    var gap = W < 520 ? 5 : 4;      /* sampling step, the only perf dial */
     parts = [];
     for(var y = 0; y < H; y += gap){
       for(var x = 0; x < W; x += gap){

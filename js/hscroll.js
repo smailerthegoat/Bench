@@ -1,4 +1,4 @@
-/* 06 — pinned horizontal.
+/* 06 : pinned horizontal.
    Scroll progress inside a sticky section maps to horizontal travel. Demoed in
    a nested scroller here; on a real page the same maths sits in a ScrollTrigger
    pin, with window scroll supplying the progress. */

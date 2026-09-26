@@ -1,4 +1,4 @@
-/* 09 — tilt & glare. Pointer position maps to rotation; children sit on
+/* 09 : tilt & glare. Pointer position maps to rotation; children sit on
    separate translateZ planes so they part as the card turns. */
 (function(){
   "use strict";

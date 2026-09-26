@@ -1,4 +1,4 @@
-/* 02 — decode-on-hover. Characters resolve left to right; everything
+/* 02 : decode-on-hover. Characters resolve left to right; everything
    right of the resolve head is junk redrawn every frame. */
 (function(){
   "use strict";

@@ -1,4 +1,4 @@
-/* Shared generated artwork. No image files ship with this site — the cover
+/* Shared generated artwork. No image files ship with this site, the cover
    used by the slice demo is drawn once to a canvas and handed out as a data URL. */
 window.Lab.artwork = (function(){
   "use strict";
@@ -28,7 +28,7 @@ window.Lab.artwork = (function(){
     g.fill();
   }
 
-  /* grain — the cheapest way to stop a gradient looking like a gradient */
+  /* grain, the cheapest way to stop a gradient looking like a gradient */
   var img = g.getImageData(0, 0, 600, 450), d = img.data;
   for(var k = 0; k < d.length; k += 4){
     var n = (Math.random() - 0.5) * 22;

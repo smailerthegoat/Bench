@@ -18,7 +18,7 @@
   line-height:1.9;border-top:1px dashed var(--line);padding-top:10px;
 }
 
-/* "Used in" — the cross-reference to a sibling site that ships this pattern. */
+/* "Used in" : the cross-reference to a sibling site that ships this pattern. */
 .used{border-top:1px dashed var(--line);margin-top:14px;padding-top:12px}
 .used .lbl{
   display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;

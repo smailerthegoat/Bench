@@ -1,4 +1,4 @@
-/* 07 — stacking deck. Each card sticks a little lower than the one before it;
+/* 07 : stacking deck. Each card sticks a little lower than the one before it;
    scale and brightness fall as the next card climbs over it. */
 (function(){
   "use strict";

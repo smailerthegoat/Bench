@@ -1,4 +1,4 @@
-/* 05 — velocity marquee. Base drift plus scroll delta, and the same delta
+/* 05 : velocity marquee. Base drift plus scroll delta, and the same delta
    skews the row. Wrapping is a modulo over half the content width, so the
    markup just has to contain two identical passes. */
 (function(){

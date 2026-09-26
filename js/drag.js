@@ -1,4 +1,4 @@
-/* 08 — throw & settle. Pointer capture gives clean drags; the last frame's
+/* 08 : throw & settle. Pointer capture gives clean drags; the last frame's
    delta is the release velocity. Friction, wall restitution, and a rotation
    that follows horizontal speed is the whole of the "physics". */
 (function(){

@@ -1,4 +1,4 @@
-/* 04 — sliced & shifted.
+/* 04 : sliced & shifted.
    One image, ten strips, alternating offsets on a delay that grows from the
    centre out. The RGB ghosts are the same image, tinted and pushed a few px. */
 (function(){

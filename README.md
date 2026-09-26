@@ -1,41 +1,34 @@
-# Bench — interaction lab
+# Bench
 
-Eleven interaction patterns, each one hand-written in vanilla JS, each one linked
-to the sibling site that actually ships it.
+Eleven interaction patterns, each one hand-written in vanilla JS and isolated in
+a panel you can operate.
 
 **Live:** https://smailerthegoat.github.io/website1/
 
 ## Why it exists
 
 Most "award site" templates are four or five reusable mechanics stacked on an
-ordinary page. This is the parts bin: every pattern isolated, in a panel you can
-hover, drag or scroll, with the cost written next to it and a link to the build
-that uses it in anger.
+ordinary page. This is the parts bin: every pattern on its own, with the cost
+written next to it, so you can take the mechanic without taking the layout.
 
 ## The patterns
 
-| # | Pattern | Shipped in |
-|---|---------|-----------|
-| 01 | Magnetic field | [Sideways](https://github.com/smailerthegoat/website2) |
-| 02 | Decode on hover | [Index](https://github.com/smailerthegoat/website5) |
-| 03 | Sampled particles | [Teardown](https://github.com/smailerthegoat/website3) |
-| 04 | Sliced & shifted | [Index](https://github.com/smailerthegoat/website5) |
-| 05 | Velocity marquee | [Sideways](https://github.com/smailerthegoat/website2) |
-| 06 | Pinned horizontal | [Sideways](https://github.com/smailerthegoat/website2) |
-| 07 | Stacking deck | [Teardown](https://github.com/smailerthegoat/website3) |
-| 08 | Throw & settle | [Coverlab](https://github.com/smailerthegoat/website4) |
-| 09 | Tilt & glare | [Coverlab](https://github.com/smailerthegoat/website4) |
-| 10 | Gooey merge | [Index](https://github.com/smailerthegoat/website5) |
-| 11 | Column wipe | [Teardown](https://github.com/smailerthegoat/website3) |
+Cursor and pointer: magnetic field, throw and settle, tilt and glare.
+Type and image: decode on hover, sliced and shifted, sampled particles.
+Scroll: velocity marquee, pinned horizontal, stacking deck.
+Everything else: gooey merge, column wipe.
+
+Where a pattern has gone on to ship in a real build, the panel says so and links
+to the source. The rest stand on their own.
 
 ## Structure
 
 ```
-css/    tokens → base → mast → spec → demos → kit   (loaded in that order)
+css/    tokens, base, mast, spec, demos, kit   (loaded in that order)
 js/     util.js first, then one file per pattern
 ```
 
-`js/util.js` exposes `window.Lab` — `lerp`, `clamp`, `reduced`, and a `loop()`
+`js/util.js` exposes `window.Lab` with `lerp`, `clamp`, `reduced`, and a `loop()`
 that only runs a rAF callback while its element is near the viewport. Nothing
 else is shared.
 

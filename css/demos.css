@@ -70,7 +70,7 @@
 }
 .mrow.alt b{color:transparent;-webkit-text-stroke:1px #394054}
 
-/* 06 horizontal track — nested scroller so it cannot hijack the page */
+/* 06 horizontal track, nested scroller so it cannot hijack the page */
 .scroller{
   height:340px;overflow-y:auto;overflow-x:hidden;
   overscroll-behavior:contain;scrollbar-width:thin;

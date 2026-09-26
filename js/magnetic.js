@@ -1,4 +1,4 @@
-/* 01 — magnetic buttons + a difference-blend cursor.
+/* 01 : magnetic buttons + a difference-blend cursor.
    Two ideas in one: the pointer drives a lerped dot, and any button within
    reach gets pulled a fraction of the distance toward it. */
 (function(){
@@ -52,7 +52,7 @@
       s.x = L.lerp(s.x, s.tx, 0.16);
       s.y = L.lerp(s.y, s.ty, 0.16);
       b.style.transform = "translate(" + s.x + "px," + s.y + "px)";
-      /* label trails the button at a third of the travel — parallax in miniature */
+      /* label trails the button at a third of the travel, parallax in miniature */
       b.firstElementChild.style.transform = "translate(" + s.x * 0.3 + "px," + s.y * 0.3 + "px)";
     });
   });
