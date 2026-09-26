@@ -3,7 +3,7 @@
 Eleven interaction patterns, each one hand-written in vanilla JS and isolated in
 a panel you can operate.
 
-**Live:** https://smailerthegoat.github.io/website1/
+**Live:** https://smailerthegoat.github.io/Bench/
 
 ## Why it exists
 
