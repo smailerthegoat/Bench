@@ -52,3 +52,9 @@
   .spec{grid-template-columns:1fr;gap:18px;padding-block:34px}
   .meta{display:none}
 }
+
+/* a build whose repository is private: named, but nothing to click */
+.used .site.private{color:var(--fg);cursor:default}
+.used .site.private::after{content:none}
+.used .repo.private{border-bottom:0;color:var(--faint);cursor:default}
+.build .links .private{color:var(--faint)}

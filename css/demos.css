@@ -20,14 +20,14 @@
 }
 
 /* 02 scramble */
-#scramble{padding:26px 22px;height:300px;overflow:auto}
+#scramble{padding:20px 22px;height:300px;overflow:hidden}
 .sl{
   display:flex;justify-content:space-between;align-items:baseline;gap:16px;
-  padding:13px 0;border-bottom:1px solid var(--line-soft);cursor:pointer;
+  padding:7px 0;border-bottom:1px solid var(--line-soft);cursor:pointer;
 }
 .sl .t{
-  font-family:var(--display);font-weight:700;
-  font-size:clamp(20px,3.4vw,30px);letter-spacing:-.02em;
+  font-family:var(--display);font-weight:700;line-height:1.12;
+  font-size:clamp(18px,3vw,26px);letter-spacing:-.02em;
 }
 .sl:hover .t{color:var(--accent)}
 .sl .y{font-family:var(--mono);font-size:11px;color:var(--faint);white-space:nowrap}
