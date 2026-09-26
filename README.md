@@ -18,8 +18,8 @@ Type and image: decode on hover, sliced and shifted, sampled particles.
 Scroll: velocity marquee, pinned horizontal, stacking deck.
 Everything else: gooey merge, column wipe.
 
-Each panel names the build that ships the pattern, and links to its source where
-that repository is public. Sideways is private, so it is named without a link.
+Where a pattern has gone on to ship in a real build, the panel says so and links
+to the source. The rest stand on their own.
 
 ## Structure
 

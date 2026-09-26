@@ -29,7 +29,7 @@
 <header class="mast">
   <p class="eyebrow">Bench · 11 patterns · no dependencies</p>
   <h1>Steal the <em>mechanics</em>,<br>not the layout.</h1>
-  <p class="lede">Every "award-site" template is four or five of these patterns stacked on an ordinary page. Each panel below is <b>live and hand-written in vanilla JS</b>. Hover it, drag it, scroll inside it. The rail on the left says what the pattern costs and <b>which site actually ships it</b>, with source where the repository is public.</p>
+  <p class="lede">Every "award-site" template is four or five of these patterns stacked on an ordinary page. Each panel below is <b>live and hand-written in vanilla JS</b>. Hover it, drag it, scroll inside it. The rail on the left says what the pattern costs, and, where one exists, <b>which site actually ships it</b>, with source.</p>
   <div class="legend"><span>hover →</span><span>drag ✋</span><span>scroll inside the framed panels</span></div>
 </header>
 
@@ -40,12 +40,6 @@
     <h2>Magnetic field</h2>
     <p>A blend-mode cursor that inverts whatever sits under it, plus buttons that <b>lean toward the pointer</b> and spring back. The cheapest way to make a page feel expensive.</p>
     <p class="meta">pointermove + lerp<br>mix-blend-mode: difference<br>~45 lines</p>
-    <div class="used">
-      <span class="lbl">Shipped in</span>
-      <span class="site private">Sideways</span>
-      <span class="what">Drives the contact card and every nav target on the CV.</span>
-      <span class="repo private">private repository</span>
-    </div>
   </div>
   <div class="stage" id="magnet">
     <div id="dot"></div>
@@ -129,12 +123,6 @@
     <h2>Velocity marquee</h2>
     <p>The ticker drifts on its own, then <b>accelerates and skews with your scroll speed</b> and settles back. Two rows travelling opposite ways sell the depth.</p>
     <p class="meta">scroll delta → skewX<br>modulo wrap, rAF<br>~40 lines</p>
-    <div class="used">
-      <span class="lbl">Shipped in</span>
-      <span class="site private">Sideways</span>
-      <span class="what">The skills band between the timeline and the contact card.</span>
-      <span class="repo private">private repository</span>
-    </div>
   </div>
   <div class="stage" id="marquee">
     <div class="mrow"><div class="inner"><b>DIRECTION</b><b>·</b><b>MOTION</b><b>·</b><b>CRAFT</b><b>·</b><b>DIRECTION</b><b>·</b><b>MOTION</b><b>·</b><b>CRAFT</b><b>·</b></div></div>
@@ -150,12 +138,6 @@
     <h2>Pinned horizontal</h2>
     <p>Vertical scroll drives horizontal travel while the section stays pinned. Demoed here inside its own scroll box so it can't hijack the page. <b>On a real site this is one ScrollTrigger pin.</b></p>
     <p class="meta">position: sticky + progress<br>translateX(-p × overflow)<br>~35 lines</p>
-    <div class="used">
-      <span class="lbl">Shipped in</span>
-      <span class="site private">Sideways</span>
-      <span class="what">The whole CV is one pinned track, and this is its spine.</span>
-      <span class="repo private">private repository</span>
-    </div>
   </div>
   <div class="stage">
     <div class="scroller" id="hscroll">
@@ -298,12 +280,6 @@
   <p class="sub">Effects are not a project. Each of these picks three or four patterns from the bench and throws the rest away, which is the whole argument for building them separately instead of one page that does everything.</p>
 
   <div class="builds">
-    <div class="build">
-      <h3>Sideways</h3>
-      <p>A résumé that scrolls horizontally: each role a panel on a pinned track, a progress hairline at the top, a magnetic contact card at the end.</p>
-      <p class="uses">magnetic · velocity marquee · pinned horizontal</p>
-      <p class="links"><span class="private">private repository</span></p>
-    </div>
     <div class="build">
       <h3>Teardown</h3>
       <p>Scrollytelling: how a scroll position becomes a frame on screen. Prose on the left, a sticky canvas on the right that rebuilds itself at every step.</p>
